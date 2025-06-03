@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>STI Malolos Virtual Tour – Main Page</title>
+  <!-- Link to the main page CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main-page-styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+</head>
+<body>
+  <div class="main-container">
+    <div class="top-section">
+      <div class="logo-heading">
+        <img src="../assets/images/STI_logo.png" alt="STI Logo" class="logo" />
+        <div class="heading-small">STI COLLEGE MALOLOS</div>
+      </div>
+
+      <div class="heading-large">
+        BE READY TO TOUR OUR<br />
+        STI MALOLOS VIRTUAL<br />
+        WEBSITE
+      </div>
+    </div>
+
+    <div class="mobile-nav-toggle">&#9650;</div>
+
+    <div class="button-bar">
+      <button id="#" class="nav-button">HOME</button>
+
+      <div class="dropdown-wrapper">
+        <button id="categoriesBtn" class="nav-button">CATEGORIES</button>
+        <div id="dropdownContainer" class="dropdown hidden">
+          <div class="dropdown-backdrop"></div>
+          <div class="dropdown-box">
+            <div class="dropdown-arrow"></div>
+            <button id="collegeProgramsBtn" class="dropdown-option">College Programs</button>
+            <button id="shsProgramsBtn" class="dropdown-option">Senior High School</button>
+          </div>
+        </div>
+      </div>
+
+      <button id="virtualTourBtn" class="nav-button">VIRTUAL TOUR</button>
+
+      <div class="dropdown-wrapper">
+        <button id="floorPlanBtn" class="nav-button">FLOOR PLAN</button>
+        <div id="floorPlanContainer" class="slide-up hidden">
+          <div class="slide-arrow"></div>
+          <div class="slide-content slide-floorplan">
+            <div class="floor-buttons">
+              <button class="floor-option">BASEMENT</button>
+              <button class="floor-option">FLOOR 1</button>
+              <button class="floor-option">FLOOR 2</button>
+              <button class="floor-option">FLOOR 3</button>
+              <button class="floor-option">FLOOR 4</button>
+              <button class="floor-option">GYM</button>
+            </div>
+
+            <div class="floor-map">
+              <img id="mapPanelImage" src="../assets/maps/BASEMENT.png" alt="Campus Map" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown-wrapper">
+        <button id="contactBtn" class="nav-button">Contact Us</button>
+        <div id="contactContainer" class="slide-up hidden">
+          <div class="slide-arrow"></div>
+  
+          <div class="contact-popup-wrapper">
+            <div class="contact-backdrop"></div>
+            <div class="contact-content">
+              <h3>Contact Us</h3>
+              <p>
+                Location: McArthur Highway, Dakila, Malolos, Philippines <br>
+                Contact Number: (044) 791 3451
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Program Popup Container -->
+  <div id="programPopupBackdrop" class="popup-backdrop hidden"></div>
+  <div id="programPopup" class="popup-container hidden">
+    <h3 id="popupTitle">Programs</h3>
+    <div class="program-list"></div>
+    <div class="popup-footer">
+        <button id="videosBtn" class="program-btn">VIDEOS</button>
+        <button id="eventsBtn" class="program-btn">EVENTS</button>
+    </div>
+  </div>
+
+    <!-- Virtual Tour Panel -->
+  <div id="virtualTourPanel" class="virtual-tour-panel">
+    <div id="vtArrow" class="vt-arrow hidden"></div>
+    <div class="vt-content-backdrop"></div>
+
+    <div class="virtual-tour-content">
+      <button id="closeVT" class="vt-close-btn">&times;</button>
+
+      <div class="vt-preview-container">
+        <img id="vtPreviewImage" src="" alt="Preview" />
+      </div>
+
+      <!-- Location & Scene Pickers -->
+      <div class="vt-pickers">
+        <label for="locationSelect">Location:</label>
+        <select id="locationSelect">
+          <option value="basement">Basement</option>
+          <option value="lobby">Lobby</option>
+          <option value="floor2">Floor 2</option>
+          <option value="floor3">Floor 3</option>
+          <option value="floor4">Floor 4</option>
+          <option value="gym">Gym</option>
+        </select>
+
+        <label for="sceneSelect">View:</label>
+        <select id="sceneSelect"></select>
+      </div>
+
+      <div id="streetViewPanorama" class="vt-panorama" style="width:100%; height:100%;"></div>
+    </div>
+    <div id="vtArrow"></div>
+  </div>
+
+  <script src="../src/virtualTour-function.js"></script>
+  <script src="../src/transition-animation.js"></script>
+  <script src="../src/slide-up-function.js"></script>
+  <script src="../src/slide-up-floor-function.js"></script>
+  <script src="../src/slide-up-contact.js"></script>
+  <script src="../src/responsive-function.js"></script>
+</body>
+</html>

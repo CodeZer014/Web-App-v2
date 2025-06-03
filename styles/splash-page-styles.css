@@ -1,0 +1,132 @@
+@import url('https://fonts.cdnfonts.com/css/norwester');
+@import url('https://fonts.cdnfonts.com/css/gotcha');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    overflow: hidden;
+  }
+  
+  .container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .left-panel {
+    flex: 0 0 40%;
+    background-color: #0776bd;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2rem;
+  }
+  
+  .right-panel {
+    flex: 0 0 60%;
+    background: url('../assets/images/splash_bg.jpg') no-repeat 100% center;
+    background-size: cover;
+  }
+  
+  .left-content {
+    text-align: center;
+    color: #fff;
+    width: auto;
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .logo-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .heading-small {
+    font-family: 'Norwester', sans-serif;
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #ffe600; 
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    white-space: nowrap; 
+  }
+  
+  .heading-large {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;  
+    color: #ffe600;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.5),
+    1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .start-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #fff;
+    color: #333;
+    font-family: 'Norwester', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow:
+      0 4px 8px rgba(0,0,0,0.2),
+      inset 0 1px 0 rgba(255,255,255,0.8);
+    transition: transform 0.1s ease-in-out,
+                box-shadow 0.1s ease-in-out;
+  }
+  
+  .start-button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 6px 12px rgba(0,0,0,0.25),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+  
+  .start-button:active {
+    transform: translateY(0);
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.2),
+      inset 0 1px 0 rgba(255,255,255,0.7);
+  }
+  
+  .fade-out {
+    animation: fadeOut 300ms ease-in forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
