@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         id: 'basement', title: 'Basement View', panorama: '../assets/routes/basement/Parking.jpg',
         hotSpots: [
+          { pitch: 5, yaw: 87, type: 'info', text: 'School Supplies\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1IPQqVFqUEv0XTWQL2q45iJveqwxtR19q/view?usp=drive_link', target: '_blank'},
           { pitch: -5, yaw: -10, type: 'scene', text: 'Go to Canteen', sceneId: 'canteenEntranceBasement', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch: 10, yaw: 215, type: 'scene', text: 'Go to Lobby', sceneId: 'lobbyMain', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
@@ -100,7 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         id: 'lobbyMain', title: 'Main Lobby View', panorama: '../assets/routes/lobby/1.jpg',
         hotSpots: [
-          { pitch: -5, yaw: 250, type: 'info', text: 'Reception Desk' },
+          { pitch: 10, yaw: 190, type: 'info', text: 'Entrance Lobby\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1PX6mkwkPUGz0a7fM1rc0F3rYiqigHZ7o/view?usp=drive_link', target: '_blank'},
+          { pitch: -5, yaw: 250, type: 'info', text: 'Reception Desk\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1rzLwPJHv-G7ZGgqpO8z4uZDy9gHLlNN_/view?usp=drive_link', target: '_blank'},
+          { pitch: -5, yaw: 360, type: 'info', text: 'Admin Office\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1JMDkICxkd3OeK4E46kHSJ7hBBLyKbEAk/view?usp=drive_link', target: '_blank'},
           { pitch: -3, yaw: 190, type: 'scene', text: 'Go to Basement', sceneId: 'basement', cssClass:'arrow-down', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch: -5, yaw: -43, type: 'scene', text: 'Go to Left Corner', sceneId: 'lobbyLeftCorner', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch: -5, yaw: 35,  type: 'scene', text: 'Go to Right Corner', sceneId: 'lobbyRightCorner', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
@@ -118,9 +121,9 @@ document.addEventListener("DOMContentLoaded", () => {
         hotSpots: [
           { pitch:-5, yaw:264, type:'scene', text:'Back to Lobby', sceneId:'lobbyMain', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:-5, yaw:-70,type:'scene', text:'Go to Hallway', sceneId:'hallway', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 25, yaw: 180, type: 'info', text: 'Computer Laboratory 1\nTotal Computers: 40 PC' },
+          { pitch: 25, yaw: 180, type: 'info', text: 'Computer Laboratory 1\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/17Z6Z7wmU_nPArDDYsl94Tpv8GeGaM6s_/view?usp=drive_link', target: '_blank'},
           { pitch:0, yaw:180,type:'scene', text:'Go to Computer Laboratory 1', sceneId:'computerLab1', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 20, yaw: 125, type: 'info', text: 'Computer Laboratory 2\nTotal Computers: 40 PC\n Instructor: Sir James' },
+          { pitch: 20, yaw: 125, type: 'info', text: 'Computer Laboratory 2\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1b_0hOrxECtfOTc19W6IMgrNwLHc-Vos-/view?usp=drive_link', target: '_blank'},
           { pitch:0, yaw:125,type:'scene', text:'Go to Computer Laboratory 2', sceneId:'computerLab2', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
@@ -182,9 +185,9 @@ document.addEventListener("DOMContentLoaded", () => {
         hotSpots: [
           { pitch:-3, yaw:-93, type:'scene', text:'Back to Hall', sceneId:'floor2Hall', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:-3, yaw:-80, type:'scene', text:'Go Right', sceneId:'Hallway', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 8, yaw: -70, type: 'info', text: 'AVR\n40 Students Capacity\nProjector\nWhite Board' },
+          { pitch: 8, yaw: -70, type: 'info', text: 'AVR\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1gsckL6zIaW1V4ODI4PvX3RKQq1HL2jIn/view?usp=drive_link', target: '_blank'},
           { pitch:3, yaw:-70, type:'scene', text:'Go to AVR', sceneId:'AVR', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 10, yaw: -130, type: 'info', text: 'Library\n40 Students Capacity\n White Board\nProjector\nBooks' },
+          { pitch: 10, yaw: -130, type: 'info', text: 'Library\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1QPawIi6qcFVn5I8RdcajU38mM4_RDal4/view?usp=drive_link', target: '_blank'},
           { pitch:-3, yaw:-130, type:'scene', text:'Go to Library', sceneId:'library', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
@@ -193,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
         hotSpots: [
           { pitch:-5, yaw:-85, type:'scene', text:'Back to Hall', sceneId:'floor2Hall', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:-3, yaw:85, type:'scene', text:'Another Corridor', sceneId:'anotherHallway', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 8, yaw:112, type: 'info', text: 'Mock Hotel\nbeds, mirror, cabinet, tables, and shelve' },
+          { pitch: 8, yaw: 112, type: 'info', text: 'Mock Hotel\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1MigNJ04MLHlMe5hFVDJ1-DUwpmpmaNYc/view?usp=drive_link', target: '_blank'},
           { pitch:-3, yaw:112, type:'scene', text:'Go to Mock Hotel', sceneId:'mockHotel', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
@@ -251,12 +254,14 @@ document.addEventListener("DOMContentLoaded", () => {
         hotSpots: [
           { pitch:-10, yaw:-83, type:'scene', text:'Go to Left Hallway', sceneId:'floor3LeftHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:-20, yaw: 187, type:'scene', text:'Back to Floor 3 Landing', sceneId:'floor3', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 8, yaw: 293, type: 'info', text: 'Room 303\n40 Students Capacity\n Glass Board\nAir Conditioned' },
+          { pitch: 8, yaw: 293, type: 'info', text: 'Room 303\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1cvsxdckZDpqJWqwqq8rKwfRkcQ9du1Kx/view?usp=drive_link', target: '_blank'},
           { pitch: 0, yaw: 293, type:'scene', text:'Go to Room 303', sceneId:'Room303', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 9, yaw: 255, type: 'info', text: 'Room 304 \n30 Students Capacity\nGlass Board\nAir Conditioned ' },
+          { pitch: 9, yaw: 255, type: 'info', text: 'Room 304\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1ft5pH8-AQ02N4Vbvo58sPqfbgT5hZZL-/view?usp=drive_link', target: '_blank'},
           { pitch: 0, yaw:255, type:'scene', text:'Go to Room 304', sceneId:'Room304', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 35, yaw: 380, type: 'info', text: 'Room 305' },
-          { pitch: 0, yaw:380, type:'scene', text:'Go to Room 305', sceneId:'Room305', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+          { pitch: 35, yaw: 380, type: 'info', text: 'Room 305\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1ft5pH8-AQ02N4Vbvo58sPqfbgT5hZZL-/view?usp=drive_link', target: '_blank'},
+          { pitch: 0, yaw:380, type:'scene', text:'Go to Room 305', sceneId:'Room305', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 5, yaw: 130, type: 'info', text: 'Room 306\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1ft5pH8-AQ02N4Vbvo58sPqfbgT5hZZL-/view?usp=drive_link', target: '_blank'},
+          { pitch: -8, yaw:130, type:'scene', text:'Go to Room 306', sceneId:'Room306', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
       {
@@ -341,9 +346,9 @@ document.addEventListener("DOMContentLoaded", () => {
           { pitch:-10, yaw:5, type:'scene', text:'Go Back to Main Hallway', sceneId:'floor4MainHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:-5, yaw:95, type:'scene', text:'Go to Left Hallway', sceneId:'floor4LeftHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:-10, yaw:-80, type:'scene', text:'Go to Right Hallway', sceneId:'floor4RightHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 10, yaw: -47, type: 'info', text: 'Aquarium\n30 Students Capacity\n Smart TV\nWhite Board\nAir Conditioning' },
+          { pitch: 10, yaw: -47, type: 'info', text: 'Aquarium\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1vgQ22htBop69IaEHoxcKg9BG9HZqpPxi/view?usp=drive_link', target: '_blank'},
           { pitch:-10, yaw:-47, type:'scene', text:'Go to Aquarium', sceneId:'Aquarium', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 35, yaw: 200, type: 'info', text: 'Computer Laboratory 3\n40 Students Capacity\nWhite Board\nSmart TV\nAir Conditioning' },
+          { pitch: 35, yaw: 200, type: 'info', text: 'Computer Laboratory 3\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1Eg_fLeSRAyaX3RW6ZxiNsXZtb5o84qyi/view?usp=drive_link', target: '_blank'},
           { pitch: 0, yaw:200, type:'scene', text:'Go to Com Lab 3', sceneId:'ComLab3', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
@@ -351,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
         id: 'floor4LeftHallway', title: 'Floor 4 Left Hallway', panorama: '../assets/routes/floor 4/4.jpg',
         hotSpots: [
           { pitch:-12, yaw:-86, type:'scene', text:'Go Back to Middle Hallway', sceneId:'floor4MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 20, yaw: -35, type: 'info', text: 'Speech Laboratory\n30 Students Capacity\nWhite Board\nProjector\nAir Conditioning' },
+          { pitch: 20, yaw: -35, type: 'info', text: 'Speech Laboratory\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1fb41DtiFAvzdjScdNs0qYLF9WnwR3IGK/view?usp=drive_link', target: '_blank'},
           { pitch:-10, yaw:-35, type:'scene', text:'Go to Speech Lab', sceneId:'SpeechLab', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
         ]
       },
@@ -359,9 +364,11 @@ document.addEventListener("DOMContentLoaded", () => {
         id: 'floor4RightHallway', title: 'Floor 4 Right Hallway', panorama: '../assets/routes/floor 4/3.jpg',
         hotSpots: [
           { pitch:-10, yaw:205, type:'scene', text:'Go Back to Middle Hallway', sceneId:'floor4MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 20, yaw: 50, type: 'info', text: 'Room 402\n40 Students Capacity\nGlass Board\nSmart TV\nAir Conditioning' },
+          { pitch: 20, yaw: 50, type: 'info', text: 'Room 402\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1Zc2yFronPSjkjYtMZrQzdrH1jyTF_hZJ/view?usp=drive_link', target: '_blank'},
           { pitch:-5, yaw:51, type:'scene', text:'Go to Room 402', sceneId:'Room402', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 5, yaw: -23, type: 'info', text: 'Room 403A\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1JB3bi7bgIb8AaZfrr4lem-LKIjNXJqef/view?usp=drive_link', target: '_blank'},
           { pitch:-5, yaw:-23, type:'scene', text:'Go to Room 403A', sceneId:'Room403', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 5, yaw: -4, type: 'info', text: 'Room 401\n(Click here to see the video)', URL: 'https://drive.google.com/file/d/1m7x-7zmQamqUJXVZ2Hocu-eaAS0v5Kp2/view?usp=drive_link', target: '_blank'},
           { pitch:-5, yaw:-4, type:'scene', text:'Go to Room 401', sceneId:'Room401', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
