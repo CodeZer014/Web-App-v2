@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>STI Malolos Virtual Tour – Main Page</title>
-  <!-- Link to the main page CSS -->
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles/main-page-styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
@@ -28,11 +28,11 @@
 
     <div class="mobile-nav-toggle">&#9650;</div>
 
-    <div class="button-bar">
+    <div class="button-bar" id="button-bar">
       <button id="#" class="nav-button">HOME</button>
 
       <div class="dropdown-wrapper">
-        <button id="categoriesBtn" class="nav-button">CATEGORIES</button>
+        <button id="categoriesBtn" class="nav-button">COURSE</button>
         <div id="dropdownContainer" class="dropdown hidden">
           <div class="dropdown-backdrop"></div>
           <div class="dropdown-box">
@@ -87,50 +87,122 @@
     </div>
   </div>
 
+<!-- Media Popup Modal -->
+<div id="mediaPopupBackdrop" class="media-popup-backdrop hidden"></div>
+<div id="mediaPopup" class="media-popup hidden">
+  <div class="popup-header">
+    <h3 id="popupTitle">Program Information</h3>
+    <button class="close-popup">&times;</button>
+  </div>
+  
+  <div class="popup-media-container">
+    <div>
+      <img id="popupImage" src="" alt="Program Image" />
+    </div>
+    <div>
+      <iframe id="popupVideo" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
   <!-- Program Popup Container -->
-  <div id="programPopupBackdrop" class="popup-backdrop hidden"></div>
-  <div id="programPopup" class="popup-container hidden">
-    <h3 id="popupTitle">Programs</h3>
-    <div class="program-list"></div>
-    <div class="popup-footer">
-      <button onclick="window.open('https://drive.google.com/drive/folders/1LXOosPEsD7XlAQpNuXj5l1TrST-GkdSP', '_blank')" id="videosBtn" class="program-btn">VIDEOS</button>
-      <button onclick="window.open('https://drive.google.com/drive/folders/1LXOosPEsD7XlAQpNuXj5l1TrST-GkdSP', '_blank')" id="eventsBtn" class="program-btn">EVENTS</button>
-    </div>
+<div id="programPopupBackdrop" class="popup-backdrop hidden"></div>
+<div id="programPopup" class="popup-container hidden">
+  <h3 id="popupTitle">Programs</h3>
+  <div class="program-list"></div>
+  <div class="popup-footer">
+    <button onclick="window.open('https://drive.google.com/drive/folders/1LXOosPEsD7XlAQpNuXj5l1TrST-GkdSP', '_blank')" id="videosBtn" class="program-btn">VIDEOS</button>
+    <button onclick="window.open('https://drive.google.com/drive/folders/1LXOosPEsD7XlAQpNuXj5l1TrST-GkdSP', '_blank')" id="eventsBtn" class="program-btn">EVENTS</button>
+  </div>
+</div>
+
+  <!-- Virtual Tour Panel -->
+<div id="virtualTourPanel" class="virtual-tour-panel">
+  <div id="vtArrow" class="vt-arrow hidden"></div>
+  <div class="vt-content-backdrop"></div>
+  <img src="../assets/images/Chibi (1).png" class="vt-chibi" alt="Tour Guide Chibi">
+  <div class="virtual-tour-content" id="virtual-tour-content">
+      
+  <button onclick="toggleFullScreen()" style="
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  ">
+  🔲 Fullscreen
+  </button>
+
+  <button id="closeVT" class="vt-close-btn">&times;</button>
+  <div class="vt-preview-container">
+      <img id="vtPreviewImage" src="" alt="Preview" />
   </div>
 
-    <!-- Virtual Tour Panel -->
-  <div id="virtualTourPanel" class="virtual-tour-panel">
-    <div id="vtArrow" class="vt-arrow hidden"></div>
-    <div class="vt-content-backdrop"></div>
+    <!-- Location & Scene Pickers -->
+<div class="vt-pickers">
+  <label for="locationSelect">Location:</label>
+  <select id="locationSelect">
+    <option value="basement">Basement</option>
+    <option value="lobby">Lobby</option>
+    <option value="floor2">Floor 2</option>
+    <option value="floor3">Floor 3</option>
+    <option value="floor4">Floor 4</option>
+    <option value="gym">Gym</option>
+  </select>
 
-    <div class="virtual-tour-content">
-      <button id="closeVT" class="vt-close-btn">&times;</button>
+  <label for="sceneSelect">View:</label>
+  <select id="sceneSelect"></select>
+</div>
 
-      <div class="vt-preview-container">
-        <img id="vtPreviewImage" src="" alt="Preview" />
-      </div>
-
-      <!-- Location & Scene Pickers -->
-      <div class="vt-pickers">
-        <label for="locationSelect">Location:</label>
-        <select id="locationSelect">
-          <option value="basement">Basement</option>
-          <option value="lobby">Lobby</option>
-          <option value="floor2">Floor 2</option>
-          <option value="floor3">Floor 3</option>
-          <option value="floor4">Floor 4</option>
-          <option value="gym">Gym</option>
-        </select>
-
-        <label for="sceneSelect">View:</label>
-        <select id="sceneSelect"></select>
-      </div>
-
-      <div id="streetViewPanorama" class="vt-panorama" style="width:100%; height:100%;"></div>
+<div id="streetViewPanorama" class="vt-panorama" style="width:100%; height:100%;"></div>
+<div id="videoPopup">
+  <button
+    id="videoPopupClose"
+    style="
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      background: rgba(255,255,255,0.8);
+      border: none;
+      border-radius: 2px;
+      font-size: 14px;
+      padding: 2px 6px;
+      cursor: pointer;
+      z-index: 100000000;
+    "
+  >
+    ✕
+</button>
+      <iframe
+        id="videoPopupIframe"
+        src=""
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        style="width: 100%; height: 100%;"
+      ></iframe>
     </div>
-    <div id="vtArrow"></div>
   </div>
+  <div id="vtArrow"></div>
+</div>
 
+  <script>
+    function toggleFullScreen() {
+      const container = document.getElementById('virtual-tour-content');
+    
+      if (!document.fullscreenElement) {
+        container.requestFullscreen().catch(err => {
+          alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  </script>
   <script src="../src/virtualTour-function.js"></script>
   <script src="../src/transition-animation.js"></script>
   <script src="../src/slide-up-function.js"></script>
