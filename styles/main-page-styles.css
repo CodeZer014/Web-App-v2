@@ -1072,7 +1072,12 @@ html, body {
       min-width: 100%;
     }
   
-    #popupImage, #popupVideo {
+    #popupImage{
+      height: 400px;
+      width: 100%;
+    }
+
+    #popupVideo{
       height: 200px;
       width: 100%;
     }
