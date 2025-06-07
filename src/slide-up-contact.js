@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   
     function toggleContact() {
+      if (window.innerWidth <= 768) closeAllMenus();
       document.querySelectorAll(".slide-up").forEach(el => {
         if (el !== contactContainer) el.classList.add("hidden");
       });

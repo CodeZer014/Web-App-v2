@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const navMenu = document.querySelectorAll("button-bar");
 
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
   const mediaContent = {
     "Information Technology": {
       image: "../assets/images/Information Technology.jpg",
@@ -201,12 +203,24 @@ function updateBackdropDimensions() {
       dropdown.classList.add("hidden");
     }
 
+    if (window.innerWidth <= 768) {
+    if (
+      !popup.contains(e.target) &&
+      !collegeBtn.contains(e.target) &&
+      !shsBtn.contains(e.target) &&
+      !mediaPopup.contains(e.target) &&
+      !navMenu.contains(e.target)
+    ) { 
+      hidePopup();
+    }
+  }
+else
+{
   if (
     !popup.contains(e.target) &&
     !collegeBtn.contains(e.target) &&
     !shsBtn.contains(e.target) &&
-    !mediaPopup.contains(e.target) &&
-    !navMenu.contains(e.target)
+    !mediaPopup.contains(e.target)
   ) {
     hidePopup();
   }
@@ -218,18 +232,21 @@ function updateBackdropDimensions() {
     if (e.target === mediaBackdrop) {
       hideMediaPopup();
     }
+  }
   });
 
     collegeBtn.addEventListener("click", () => {
       toggleDropdown();
+      if (window.innerWidth <= 768) closeAllMenus();
       showPopup("college");
     });
     shsBtn.addEventListener("click", () => {
       toggleDropdown();
+      if (window.innerWidth <= 768) closeAllMenus();
       showPopup("shs");
     });
   
-
+  
   closePopupBtns.forEach(btn => {
     btn.addEventListener("click", hideMediaPopup);
   });

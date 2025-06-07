@@ -162,18 +162,30 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         id: 'kitchen', title: 'Kitchen View', panorama: '../assets/routes/lobby/kitchen.jpg',
         hotSpots: [
+          { pitch: 0, yaw: 100, type: 'info', text: 'Kitchen Events\n(Click here to see the video)', cssClass: 'info-hotspot', clickHandlerFunc: showVideoPopup,
+            clickHandlerArgs: {
+              url: 'https://drive.google.com/file/d/1Qe1pfrhHQbhKnEaxKJicUoIFe_HAxPTo/view?usp=drive_link',
+            }, target: '_blank'},
           { pitch:-5, yaw:140, type:'scene', text:'Back to Hallway', sceneId:'hallway', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
         ]
       },
       { 
         id: 'computerLab1', title: 'Computer Lab 1', panorama: '../assets/routes/lobby/computerLab.jpg',
         hotSpots: [
+          { pitch: 10, yaw: 0, type: 'info', text: 'Computer Laboratory Events\n(Click here to see the video)', cssClass: 'info-hotspot', clickHandlerFunc: showVideoPopup,
+            clickHandlerArgs: {
+              url: 'https://drive.google.com/file/d/1yD5qgNN_VLUxuRE4Jauv4HFvGxnbpeNZ/view?usp=drive_link',
+            }, target: '_blank'},
           { pitch:0, yaw:0,type:'scene', text:'Exit', sceneId:'lobbyRightCorner', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
       { 
         id: 'computerLab2', title: 'Computer Lab 2', panorama: '../assets/routes/lobby/computerLab2.jpg',
         hotSpots: [
+          { pitch: 10, yaw: 180, type: 'info', text: 'Computer Laboratory Events\n(Click here to see the video)', cssClass: 'info-hotspot', clickHandlerFunc: showVideoPopup,
+            clickHandlerArgs: {
+              url: 'https://drive.google.com/file/d/1yD5qgNN_VLUxuRE4Jauv4HFvGxnbpeNZ/view?usp=drive_link',
+            }, target: '_blank'},
           { pitch:0, yaw:180,type:'scene', text:'Exit', sceneId:'lobbyRightCorner', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
@@ -255,6 +267,18 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         id: 'AVR', title: 'AVR', panorama: '../assets/routes/floor 2/AVR.jpg',
         hotSpots: [
+          { pitch: 10, yaw: -47, type: 'info', text: 'AVR Events 1\n(Click here to see the video)', cssClass: 'info-hotspot', clickHandlerFunc: showVideoPopup,
+            clickHandlerArgs: {
+              url: 'https://drive.google.com/file/d/18MuzGb9OELa6K2o5naVlZP_QpTsoRjmM/view?usp=drive_link',
+            }, target: '_blank'},
+            { pitch: 10, yaw: -20, type: 'info', text: 'AVR Events 2\n(Click here to see the video)', cssClass: 'info-hotspot', clickHandlerFunc: showVideoPopup,
+            clickHandlerArgs: {
+              url: 'https://drive.google.com/file/d/19q0I_95tRQfSwZUTUnPHny2cmZdP6fNO/view?usp=drive_link',
+            }, target: '_blank'},
+            { pitch: 10, yaw: 10, type: 'info', text: 'AVR Events 3\n(Click here to see the video)', cssClass: 'info-hotspot', clickHandlerFunc: showVideoPopup,
+            clickHandlerArgs: {
+              url: 'https://drive.google.com/file/d/1Q5CDl7EaBdw_pIJqwboyNv3_qXc7VV0R/view?usp=drive_link',
+            }, target: '_blank'},
           { pitch:5, yaw:-195, type:'scene', text:'Back to Corridor', sceneId:'Corridor', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
@@ -562,6 +586,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   vtBtn.addEventListener('click', async e => {
     e.preventDefault();
+    if (window.innerWidth <= 768) closeAllMenus();
     vtPanel.style.display = 'block';
 
     if (!vtPanel._loaded) {
@@ -606,11 +631,17 @@ document.addEventListener("DOMContentLoaded", () => {
       // Initialize Pannellum
       viewer = pannellum.viewer('streetViewPanorama', pannellumConfig);
 
-      // === ③ When user clicks a hotspot, Pannellum will change scenes. Listen for that: ===
       viewer.on('scenechange', () => {
         const currentScene = viewer.getScene();
         updatePreviewImage(currentScene);
-        // Also sync the dropdowns:
+        
+        // Close video popup if open
+        const popup = document.getElementById('videoPopup');
+        if (popup.style.display === 'block') {
+          popup.style.display = 'none';
+          document.getElementById('videoPopupIframe').src = '';
+        }
+        
         const locKey = Object.entries(locations)
           .find(([k, arr]) => arr.some(s => s.id === currentScene))[0];
         if (locationSelect.value !== locKey) {

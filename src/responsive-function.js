@@ -8,6 +8,24 @@ document.addEventListener('DOMContentLoaded', () => {
       backdrop.classList.add('nav-backdrop');
       document.body.appendChild(backdrop);
     }
+
+    window.closeAllMenus = function() {
+      // Close program popup
+      document.getElementById('programPopup')?.classList.add('hidden');
+      document.getElementById('programPopupBackdrop')?.classList.add('hidden');
+      
+      // Close virtual tour
+      document.getElementById('virtualTourPanel').style.display = 'none';
+      
+      // Close floor plan
+      document.getElementById('floorPlanContainer')?.classList.add('hidden');
+      
+      // Close contact
+      document.getElementById('contactContainer')?.classList.add('hidden');
+      
+      // Close dropdown
+      document.getElementById('dropdownContainer')?.classList.add('hidden');
+    }
   
     function openMenu() {
       toggle.classList.add('open');

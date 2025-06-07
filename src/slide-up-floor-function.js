@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       function toggleContainer() {
+        if (window.innerWidth <= 768) closeAllMenus();
           if (container.classList.contains('hidden')) {
               document.querySelectorAll('.slide-up').forEach(el => el.classList.add('hidden'));
               container.classList.remove('hidden');
